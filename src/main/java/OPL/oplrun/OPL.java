@@ -48,7 +48,7 @@ public class OPL {
 		cplex = oplF.createCplex();
 		cplex.setOut(null);
 		opl = oplF.createOplModel(def, cplex);
-		IloOplDataSource dataSource = oplF.createOplDataSource(dataPath);
+		IloOplDataSource dataSource = new DataModel(oplF);
 		opl.addDataSource(dataSource);
 		opl.generate();
 	}
